@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Pro</title>
+    <link rel="stylesheet" href="style.css">    
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            Sudoku Provjp
+        </div>
+
+        <div class="header-actions">
+
+            <button id="newGameBtn">
+                New Game
+            </button>
+
+            <button id="darkModeBtn">
+                🌙
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- TOP PANEL -->
+    <!-- ========================= -->
+
+    <section class="top-panel">
+
+        <div class="difficulty-container">
+
+            <label for="difficulty">
+                Difficulty
+            </label>
+
+            <select id="difficulty">
+
+                <option value="easy">
+                    Easy
+                </option>
+
+                <option value="medium" selected>
+                    Medium
+                </option>
+
+                <option value="hard">
+                    Hard
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="timer-container">
+
+            <span class="panel-title">
+                Time
+            </span>
+
+            <span id="timer">
+                00:00
+            </span>
+
+        </div>
+
+        <div class="lives-container">
+
+            <span class="panel-title">
+                Lives
+            </span>
+
+            <span id="lives">
+                ❤️❤️❤️
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- GAME AREA -->
+    <!-- ========================= -->
+
+    <main class="game-container">
+
+        <!-- Sudoku Board -->
+
+        <div id="board">
+
+        </div>
+
+        <!-- Side Panel -->
+
+        <aside class="side-panel">
+
+            <button id="hintBtn">
+                💡 Hint
+            </button>
+
+            <button id="notesBtn">
+                📝 Notes
+            </button>
+
+            <button id="undoBtn">
+                ↩ Undo
+            </button>
+
+            <button id="redoBtn">
+                ↪ Redo
+            </button>
+
+            <button id="solveBtn">
+                🤖 Solve
+            </button>
+
+        </aside>
+
+    </main>
+
+    <!-- ========================= -->
+    <!-- NUMBER PAD -->
+    <!-- ========================= -->
+
+    <section class="number-pad">
+
+        <button class="number-btn" data-number="1">1</button>
+        <button class="number-btn" data-number="2">2</button>
+        <button class="number-btn" data-number="3">3</button>
+        <button class="number-btn" data-number="4">4</button>
+        <button class="number-btn" data-number="5">5</button>
+        <button class="number-btn" data-number="6">6</button>
+        <button class="number-btn" data-number="7">7</button>
+        <button class="number-btn" data-number="8">8</button>
+        <button class="number-btn" data-number="9">9</button>
+
+        <button id="eraseBtn">
+            ✖
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- STATISTICS -->
+    <!-- ========================= -->
+
+    <section class="stats-container">
+
+        <h2>
+            Statistics
+        </h2>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span class="stat-value" id="gamesPlayed">
+                    0
+                </span>
+
+                <span class="stat-label">
+                    Games Played
+                </span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-value" id="gamesWon">
+                    0
+                </span>
+
+                <span class="stat-label">
+                    Games Won
+                </span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-value" id="bestTime">
+                    --
+                </span>
+
+                <span class="stat-label">
+                    Best Time
+                </span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-value" id="streak">
+                    0
+                </span>
+
+                <span class="stat-label">
+                    Current Streak
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- WIN MODAL -->
+    <!-- ========================= -->
+
+    <div id="winModal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <h1>
+                🎉 Congratulations!
+            </h1>
+
+            <p id="winTime">
+                Time: 00:00
+            </p>
+
+            <p id="winMistakes">
+                Mistakes: 0
+            </p>
+
+            <button id="playAgainBtn">
+                Play Again
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- LOSE MODAL -->
+    <!-- ========================= -->
+
+    <div id="loseModal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <h1>
+                💀 Game Over
+            </h1>
+
+            <p>
+                You ran out of lives.
+            </p>
+
+            <button id="tryAgainBtn">
+                Try Again
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- SCRIPTS -->
+    <!-- ========================= -->
+
+    <script type="module" src="js/game.js"></script>
+
+</body>
+</html>

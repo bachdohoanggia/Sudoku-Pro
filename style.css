@@ -1,0 +1,378 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    background: #f5f6fa;
+    color: #222;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.header button {
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+/* =========================
+   TOP PANEL
+========================= */
+
+.top-panel {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+    margin-bottom: 25px;
+}
+
+.panel-title {
+    display: block;
+    font-size: 14px;
+    color: gray;
+
+    margin-bottom: 5px;
+}
+
+.timer-container,
+.lives-container,
+.difficulty-container {
+    text-align: center;
+}
+
+/* =========================
+   GAME CONTAINER
+========================= */
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 30px;
+}
+
+/* =========================
+   BOARD
+========================= */
+
+#board {
+    display: grid;
+
+    grid-template-columns: repeat(9, 60px);
+    grid-template-rows: repeat(9, 60px);
+
+    border: 3px solid black;
+}
+
+/* =========================
+   CELL
+========================= */
+
+.cell {
+
+    width: 60px;
+    height: 60px;
+
+    border: 1px solid #ccc;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    text-align: center;
+
+    background: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+/* selected */
+
+.cell.selected {
+    background: #dbeafe;
+}
+
+/* fixed */
+
+.cell.fixed {
+    background: #ececec;
+    font-weight: bold;
+}
+
+/* wrong */
+
+.cell.wrong {
+    background: #ffd7d7;
+    color: red;
+}
+
+/* highlight */
+
+.cell.highlight {
+    background: #fff6c4;
+}
+
+/* note */
+
+.cell.note {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0.08em;
+}
+
+/* =========================
+   3x3 BOX BORDERS
+========================= */
+
+.right-border {
+    border-right: 3px solid black;
+}
+
+.bottom-border {
+    border-bottom: 3px solid black;
+}
+
+/* =========================
+   SIDE PANEL
+========================= */
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-panel button {
+
+    width: 130px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    border: none;
+
+    background: #2563eb;
+    color: white;
+
+    border-radius: 8px;
+}
+
+#notesBtn {
+    background: crimson;
+}
+
+#notesBtn.active {
+    background: #16a34a;
+}
+
+.side-panel button:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   NUMBER PAD
+========================= */
+
+.number-pad {
+
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.number-pad button {
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.number-btn {
+    background: white;
+}
+
+#eraseBtn {
+    background: crimson;
+    color: white;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-container {
+
+    margin-top: 40px;
+
+    max-width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stats-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.stat-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.stat-value {
+
+    display: block;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.stat-label {
+    color: gray;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+
+    background: white;
+
+    width: 400px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.modal-content h1 {
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+}
+
+.modal-content button {
+
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+
+    background: #121212;
+    color: white;
+}
+
+body.dark .cell {
+    background: #1f1f1f;
+    color: white;
+}
+
+body.dark .cell.fixed {
+    background: #333;
+}
+
+body.dark .stat-card {
+    background: #1f1f1f;
+}
+
+body.dark .modal-content {
+    background: #1f1f1f;
+}
+
+body.dark .number-btn {
+    background: #333;
+    color: white;
+}
+
+body.dark .cell.wrong {
+    background: #4b1212;
+    color: #ffb3b3;
+}
