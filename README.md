@@ -37,8 +37,10 @@ The experience is intentionally lightweight:
 This project is live at https://sudoku-provjp.netlify.app/
 
 Screenshots:
-![LightMode](assets/Screenshot 2026-06-22 at 10.37.13.png)
-![DarkMode](assets/Screenshot 2026-06-22 at 10.37.01.png)   
+
+![LightMode](assets/Image2.png)
+
+![DarkMode](assets/Image1.png) 
 
 
 ## Technical Design
