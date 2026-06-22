@@ -34,29 +34,12 @@ The experience is intentionally lightweight:
 
 ## Demo
 
-This is a static browser app. Run it with any local static file server from the project root.
+This project is live at https://sudoku-provjp.netlify.app/
 
-```bash
-python3 -m http.server 8000
-```
+Screenshots:
+![LightMode](assets/Screenshot 2026-06-22 at 10.37.13.png)
+![DarkMode](assets/Screenshot 2026-06-22 at 10.37.01.png)   
 
-Then open:
-
-```text
-http://localhost:8000
-```
-
-Demo walkthrough:
-
-1. Choose a difficulty from the top panel.
-2. Click **New Game** to generate a puzzle.
-3. Select an empty cell on the Sudoku board.
-4. Enter a number using either the on-screen number pad or the keyboard.
-5. Toggle **Notes** and add candidate numbers to an empty cell.
-6. Try **Hint**, **Undo**, **Redo**, **Erase**, and **Solve** from the side panel or number pad.
-7. Complete the puzzle to see the win modal, completion time, mistake count, and confetti.
-8. Make three wrong entries to see the loss state.
-9. Toggle dark mode with the moon button in the header.
 
 ## Technical Design
 
